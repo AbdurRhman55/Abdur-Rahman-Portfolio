@@ -20,7 +20,7 @@ const AboutHero = () => {
   }, []);
 
   return (
-    <section className="min-h-screen flex items-center justify-center px-10 lg:py-30 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+    <section className="min-h-screen flex items-center justify-center px-10 lg:pt-30 lg:pb-10 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         {/* Left Content */}
         <div className="space-y-8" data-aos="fade-right">

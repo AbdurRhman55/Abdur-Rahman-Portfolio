@@ -110,18 +110,6 @@ const CTASection = () => {
             </div>
           </div>
         </div>
-
-        {/* Social Proof */}
-        <div className="mt-12" data-aos="fade-up">
-          <p className="text-gray-400 text-sm mb-4">Trusted by professionals at</p>
-          <div className="flex flex-wrap justify-center gap-8 opacity-60">
-            {/* These would be company logos in a real implementation */}
-            <div className="text-white font-bold text-xl">Google</div>
-            <div className="text-white font-bold text-xl">Microsoft</div>
-            <div className="text-white font-bold text-xl">Upwork</div>
-            <div className="text-white font-bold text-xl">Fiverr</div>
-          </div>
-        </div>
       </div>
     </section>
   );

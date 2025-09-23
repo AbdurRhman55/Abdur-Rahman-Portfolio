@@ -1,9 +1,19 @@
 import React from "react";
 import hero from '../../../assets/hero.png';
 import aboutImage1 from '../../../assets/hero.png'; // Add these images to your assets
-
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 function Aboutsection() {
+
+  useEffect(() => {
+      AOS.init({
+        duration: 1000,
+        once: true,
+      });
+    }, []);
+
   return (
     <section id="about" className="py-16 md:py-24 px-4 md:px-8 bg-gradient-to-b from-gray-900 to-gray-800 relative overflow-hidden">
       {/* Background decorative elements */}

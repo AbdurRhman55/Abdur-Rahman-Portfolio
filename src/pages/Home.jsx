@@ -4,7 +4,7 @@ import Achievement from '../Components/Home/Achievement/Achievements';
 import Aboutsection from '../Components/Home/About/Aboutsection';
 import CTASection from '../Components/Home/CTASection/CTASection';
 import Footer from '../Components/Home/Footer/Footer';
-import Services from '../Components/Home/Services/Services';
+
 
 
 function Home() {
@@ -16,7 +16,7 @@ function Home() {
       <Aboutsection />
       <CTASection />
       <Footer />
-      <Services/>
+
     </div>
   )
 }

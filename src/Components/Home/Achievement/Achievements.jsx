@@ -9,8 +9,18 @@ import {
   FaTrophy,
   FaGitAlt,
 } from "react-icons/fa";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
+
 
 const Achievements = () => {
+    useEffect(() => {
+      AOS.init({
+        duration: 1000,
+        once: true,
+      });
+    }, []);
   const achievements = [
     {
       category: "Academic Achievements",

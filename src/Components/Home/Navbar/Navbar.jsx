@@ -43,7 +43,7 @@ function Navbar() {
         <div className="hidden md:block">
           <Button
             className="text-white bg-gradient-to-r from-[#1A2A80] to-[#000B58] rounded-lg px-5 py-2 text-lg font-semibold hover:shadow-lg hover:shadow-blue-500/30 transition-all duration-300"
-            contant="Click Me"
+            contant="Contact Us"
           />
         </div>
       </div>
