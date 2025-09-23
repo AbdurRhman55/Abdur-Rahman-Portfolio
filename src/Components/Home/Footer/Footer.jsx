@@ -5,7 +5,7 @@ import {
   FaInstagram, 
   FaGithub, 
   FaLinkedinIn, 
-  FaHeart,
+  
   FaArrowUp,
   FaMapMarkerAlt,
   FaPhone,
@@ -144,7 +144,7 @@ const Footer = () => {
         {/* Bottom bar */}
         <div className="pt-8 border-t border-gray-700 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-gray-400 text-sm flex items-center">
-            © {currentYear} Abdur Rahman. Made with <FaHeart className="text-red-500 mx-1" /> in Pakistan
+            © {currentYear} Abdur Rahman. 
           </p>
           
           <div className="flex items-center gap-6">

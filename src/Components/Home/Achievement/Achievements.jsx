@@ -15,6 +15,7 @@ import { useEffect } from "react";
 
 
 const Achievements = () => {
+
     useEffect(() => {
       AOS.init({
         duration: 1000,
