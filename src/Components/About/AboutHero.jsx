@@ -56,7 +56,7 @@ const AboutHero = () => {
             ].map((stat, i) => (
               <div
                 key={i}
-                className="text-center p-4 bg-gray-800 rounded-xl border border-gray-700 shadow-md"
+                className="text-center p-4 "
                 data-aos="zoom-in"
                 data-aos-delay={i * 150}
               >
