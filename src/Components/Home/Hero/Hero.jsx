@@ -9,7 +9,7 @@ import {
   FaUsers,
 } from "react-icons/fa";
 import Button from "../Button/Button";
-import hero from "../../../assets/hero.png";
+import hero from "../../../assets/about hero.png";
 
 const Hero = () => {
   return (
@@ -61,10 +61,14 @@ const Hero = () => {
               className="text-white bg-gradient-to-r from-[#1A2A80] to-[#000B58] rounded-lg px-6 py-3 font-semibold hover:shadow-lg hover:shadow-blue-500/30 transition-all duration-300 hover:-translate-y-1"
               contant="Hire Me"
             />
-            <Button
-              className="text-white border border-gray-400 rounded-lg px-6 py-3 font-semibold hover:bg-white/10 transition-all duration-300 hover:-translate-y-1"
+            <a href="../../../assets/Abdur Rahman CV.docx"
+            download
+            >
+              <Button
+              className="text-white border border-gray-400 rounded-lg px-6 py-3 font-semibold hover:bg-white/10 transition-all duration-300 hover:-translate-y-1 cursor-pointer"
               contant="Download CV"
             />
+            </a>
           </div>
 
           {/* Stats */}

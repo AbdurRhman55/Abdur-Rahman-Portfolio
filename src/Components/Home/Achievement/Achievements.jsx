@@ -223,9 +223,13 @@ const Achievements = () => {
         {/* Call to Action */}
         <div className="text-center mt-16" data-aos="fade-up">
           <p className="text-gray-400 mb-6">Want to know more about my work?</p>
-          <button className="px-6 py-3 bg-gradient-to-r from-[#1A2A80] to-[#000B58] text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-blue-500/30 transition-all duration-300">
+          <a href="../../../assets/Abdur Rahman CV.docx"
+          download
+          >
+            <button className="cursor-pointer px-6 py-3 bg-gradient-to-r from-[#1A2A80] to-[#000B58] text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-blue-500/30 transition-all duration-300">
             Download Full CV
           </button>
+          </a>
         </div>
       </div>
     </section>

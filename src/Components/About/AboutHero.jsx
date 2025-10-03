@@ -73,9 +73,11 @@ const AboutHero = () => {
             <button className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-900 to-blue-700 text-white font-semibold rounded-lg hover:shadow-lg transition">
               My Projects <FaArrowRight />
             </button>
-            <button className="flex items-center gap-2 px-6 py-3 border border-gray-600 text-white font-semibold rounded-lg hover:bg-white/10 transition">
+            <a href="../../assets/Abdur Rahman CV.docx"
+              download
+               className="flex items-center gap-2 px-6 py-3 border border-gray-600 text-white font-semibold rounded-lg hover:bg-white/10 transition">
               Download CV <FaDownload />
-            </button>
+            </a>
           </div>
         </div>
 

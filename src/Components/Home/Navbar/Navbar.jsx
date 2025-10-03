@@ -8,7 +8,7 @@ const nav = [
   { id: 2, name: "About", href: "/about" },
   { id: 3, name: "Projects", href: "/projects" },
   { id: 4, name: "Services", href: "/services" },
-  { id: 5, name: "Contacts", href: "/contacts" },
+  { id: 5, name: "Contacts", href: "/ContactUs" },
 ];
 
 function Navbar() {
@@ -41,10 +41,13 @@ function Navbar() {
 
         {/* Button */}
         <div className="hidden md:block">
-          <Button
-            className="text-white bg-gradient-to-r from-[#1A2A80] to-[#000B58] rounded-lg px-5 py-2 text-lg font-semibold hover:shadow-lg hover:shadow-blue-500/30 transition-all duration-300"
-            contant="Contact Us"
-          />
+          <Link to={nav[4].href}  className="text-white bg-gradient-to-r from-[#1A2A80] to-[#000B58] rounded-lg px-5 py-2 text-lg font-semibold hover:shadow-lg hover:shadow-blue-500/30 transition-all duration-300">
+               Contact Us
+          </Link>
+         {/* <a href="./ContactUs.jsx"
+            className="text-white bg-gradient-to-r from-[#1A2A80] to-[#000B58] rounded-lg px-5 py-2 text-lg font-semibold hover:shadow-lg hover:shadow-blue-500/30 transition-all duration-300">
+            Contact Us
+         </a> */}
         </div>
       </div>
     </header>

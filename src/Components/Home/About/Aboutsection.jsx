@@ -112,9 +112,11 @@ function Aboutsection() {
             
             {/* Call to action */}
             <div className="flex flex-wrap gap-4">
-              <button className="px-6 py-3 bg-gradient-to-r from-[#1A2A80] to-[#000B58] text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-blue-500/30 transition-all duration-300">
-                Download CV
-              </button>
+             <a href="../../../assets/Abdur Rahman CV.docx"
+             download
+             className="px-6 py-3 bg-gradient-to-r from-[#1A2A80] to-[#000B58] text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-blue-500/30 transition-all duration-300">
+                Download CV 
+              </a>
               <button className="px-6 py-3 border border-gray-700 text-white font-semibold rounded-lg hover:bg-white/10 transition-all duration-300">
                 My Projects
               </button>

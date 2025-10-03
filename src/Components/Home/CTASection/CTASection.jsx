@@ -55,7 +55,7 @@ const CTASection = () => {
             <h3 className="text-xl font-bold text-white mb-2">Download CV</h3>
             <p className="text-gray-400 text-sm mb-4">Get a detailed overview of my skills and experience</p>
             <a 
-              href="/abdur-rahman-cv.pdf" 
+              href="../../../assets/Abdur Rahman CV.docx" 
               download
               className="inline-block px-6 py-2 text-sm font-medium text-white border border-gray-600 rounded-lg hover:bg-white/10 transition-all duration-300"
             >

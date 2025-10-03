@@ -63,11 +63,11 @@ const Footer = () => {
             <h4 className="text-lg font-semibold text-white mb-6 pb-2 border-b border-gray-700">Quick Links</h4>
             <ul className="space-y-3">
               {[
-                { name: "Home", link: "#home" },
-                { name: "About", link: "#about" },
-                { name: "Projects", link: "#projects" },
-                { name: "Achievements", link: "#achievements" },
-                { name: "Contact", link: "#contact" }
+                { name: "Home", link: "/" },
+                { name: "About", link: "/about" },
+                { name: "Projects", link: "/projects" },
+                { name: "Services", link: "./services" },
+                { name: "Contact", link: "/contactus" }
               ].map((item, index) => (
                 <li key={index}>
                   <a 
@@ -107,7 +107,7 @@ const Footer = () => {
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <FaMapMarkerAlt className="text-[#4477CE] mt-1 flex-shrink-0" />
-                <span className="text-gray-400">Lahore, Pakistan</span>
+                <span className="text-gray-400">Peshawar, Pakistan</span>
               </li>
               <li className="flex items-start gap-3">
                 <FaPhone className="text-[#4477CE] mt-1 flex-shrink-0" />

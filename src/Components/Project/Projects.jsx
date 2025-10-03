@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import { motion } from "framer-motion";
 
@@ -20,6 +20,7 @@ const projects = [
     tech: ["TailwindCSS", "PHP", "MySQL"],
     demo: "https://pakizabites.com/",
     github: "#",
+    category: "Web Development",
     featured: true,
   },
   {
@@ -28,9 +29,10 @@ const projects = [
     description:
       "Personal portfolio to showcase skills and projects with modern design and smooth animations.",
     image: tutorImg,
-    tech: ["React", "TailwindCSS", "Node.js","Mongo DB"],
+    tech: ["React", "TailwindCSS", "Node.js", "Mongo DB"],
     demo: "#",
     github: "#",
+    category: "React",
   },
   {
     id: 3,
@@ -39,8 +41,9 @@ const projects = [
       "A blogging platform with user authentication, comments, and admin dashboard.",
     image: teaImg,
     tech: ["PHP", "MySQL", "TailwindCSS"],
-    demo: "#",
+    demo: "https://ar-leaf.netlify.app/",
     github: "#",
+    category: "PHP",
     featured: true,
   },
   {
@@ -52,6 +55,7 @@ const projects = [
     tech: ["TailwindCSS", "JavaScript", "Node.js"],
     demo: "#",
     github: "#",
+    category: "UI/UX",
   },
   {
     id: 5,
@@ -62,31 +66,47 @@ const projects = [
     tech: ["TailwindCSS", "JavaScript", "React"],
     demo: "#",
     github: "#",
+    category: "React",
     featured: true,
   },
 ];
 
-// Animations (centralized)
+// Categories
+const categories = [
+  "All",
+  "TailwindCSS",
+  "JavaScript",
+  "React",
+  "PHP",
+  "MySQL",
+];
+
+// Animations
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
 };
-const fadeIn = {
-  hidden: { opacity: 0 },
-  visible: { opacity: 1, transition: { duration: 0.4 } },
-};
 
-const ProjectsGrid = () => {
+const Projects = () => {
+  const [activeCategory, setActiveCategory] = useState("All");
+
+  let filteredProjects;
+  if (activeCategory === "All") {
+    filteredProjects = projects;
+  } else {
+    filteredProjects = projects.filter((p) => p.tech.includes(activeCategory));
+  }
+
   return (
-    <section className="py-20 bg-gradient-to-l from-blue-50 to-blue-100 dark:from-slate-900 dark:to-slate-800">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-16 bg-gradient-to-r from-blue-50 to-blue-100 dark:from-slate-900 dark:to-slate-800">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {/* Heading */}
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
           variants={fadeInUp}
-          className="text-center mb-16"
+          className="mb-12"
         >
           <h2 className="text-4xl sm:text-5xl font-bold text-slate-800 dark:text-white mb-4">
             My Recent Projects
@@ -97,9 +117,29 @@ const ProjectsGrid = () => {
           </p>
         </motion.div>
 
+        {/* Category Filters */}
+        <div className="flex justify-center gap-4 mb-12 border-b border-gray-300 dark:border-gray-700 pb-2">
+          {categories.map((category) => (
+            <button
+              key={category}
+              onClick={() => setActiveCategory(category)}
+              className={`relative text-lg font-medium transition-all duration-300 ${
+                activeCategory === category
+                  ? "text-[#1A2A80] dark:text-[#4F46E5]"
+                  : "text-gray-500 dark:text-gray-400 hover:text-[#1A2A80] dark:hover:text-[#4F46E5]"
+              }`}
+            >
+              {category}
+              {activeCategory === category && (
+                <span className="absolute left-0 -bottom-1 w-full h-1 rounded-full bg-gradient-to-r from-[#1A2A80] to-[#000B58]"></span>
+              )}
+            </button>
+          ))}
+        </div>
+
         {/* Projects Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project) => (
+          {filteredProjects.map((project) => (
             <motion.div
               key={project.id}
               initial="hidden"
@@ -108,14 +148,12 @@ const ProjectsGrid = () => {
               variants={fadeInUp}
               className="group relative bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-500 border border-slate-100 dark:border-slate-700"
             >
-              {/* Featured Badge */}
               {project.featured && (
                 <span className="absolute top-4 right-4 z-10 bg-gradient-to-r from-blue-600 to-purple-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">
                   Featured
                 </span>
               )}
 
-              {/* Project Image */}
               <div className="relative overflow-hidden">
                 <motion.img
                   src={project.image}
@@ -126,7 +164,6 @@ const ProjectsGrid = () => {
                 <div className="absolute inset-0 bg-black/50 bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300"></div>
               </div>
 
-              {/* Project Content */}
               <div className="p-6">
                 <h3 className="text-xl font-bold text-slate-800 dark:text-white mb-2 line-clamp-1">
                   {project.title}
@@ -135,7 +172,6 @@ const ProjectsGrid = () => {
                   {project.description}
                 </p>
 
-                {/* Tech Stack */}
                 <div className="flex flex-wrap gap-2 mb-6">
                   {project.tech.map((t, i) => (
                     <span
@@ -147,13 +183,12 @@ const ProjectsGrid = () => {
                   ))}
                 </div>
 
-                {/* Action Buttons */}
                 <div className="flex gap-3">
                   <a
                     href={project.demo}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-2 flex-1 bg-gradient-to-r from-blue-600 to-blue-700 text-white py-2.5 px-4 rounded-lg hover:from-blue-700 hover:to-blue-800 transition shadow-md hover:shadow-lg"
+                    className="flex items-center justify-center gap-2 flex-1 bg-gradient-to-r from-[#1A2A80] to-[#000B58] text-white py-2.5 px-4 rounded-lg hover:from-blue-700 hover:to-blue-1000 transition shadow-md hover:shadow-lg"
                   >
                     <FaExternalLinkAlt className="text-sm" />
                     <span className="text-sm font-medium">Live Demo</span>
@@ -172,22 +207,9 @@ const ProjectsGrid = () => {
             </motion.div>
           ))}
         </div>
-
-        {/* View More Button */}
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={fadeInUp}
-          className="text-center mt-12"
-        >
-          <button className="border-2 border-blue-600 text-blue-600 dark:border-blue-400 dark:text-blue-400 px-8 py-3 rounded-lg hover:bg-blue-600 hover:text-white dark:hover:bg-blue-400 dark:hover:text-slate-900 transition font-medium">
-            View All Projects
-          </button>
-        </motion.div>
       </div>
     </section>
   );
 };
 
-export default ProjectsGrid;
+export default Projects;
